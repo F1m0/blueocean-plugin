@@ -1,18 +1,11 @@
-#!groovy
+pipeline {
+    agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
 
-
-properties([
-  // only 20 builds,
-  buildDiscarder(logRotator(artifactNumToKeepStr: '20', numToKeepStr: '20')),
-  parameters([
-    booleanParam(name: 'USE_SAUCELABS', defaultValue: false)
-  ])
-])
-
-
-
-
-node() {
 
       stage('Setup') {
         deleteDir()
