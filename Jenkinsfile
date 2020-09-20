@@ -6,7 +6,7 @@ pipeline {
         }
     }
 
-
+stages {
       stage('Setup') {
         deleteDir()
         checkout scm
@@ -26,4 +26,4 @@ pipeline {
           }
         }
       }
-
+}
