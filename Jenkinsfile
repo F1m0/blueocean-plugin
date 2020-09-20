@@ -27,11 +27,10 @@ node() {
 
 
                 }
-       finally {
         stage('Cleanup') {
           catchError(message: 'Suppressing error in Stage: Cleanup') {
             deleteDir()
           }
         }
       }
-}
+
