@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    stages {
+  
+
+   stages {
       stage('Setup') {
         steps {
         deleteDir()
@@ -8,20 +10,21 @@ pipeline {
         }
 }
 
-          stage('Building BlueOcean') 
-            steps {
-            timeout(time: 90, unit: 'MINUTES') {
-              sh "mvn clean install -DskipTests"
+        stage('Building BlueOcean') { 
+          steps {
+          timeout(time: 90, unit: 'MINUTES') {
+          sh "mvn clean install -DskipTests"
            }
 }
-
+}
                 
-        stage('Cleanup') 
+        stage('Cleanup') { 
           steps {
           catchError(message: 'Suppressing error in Stage: Cleanup') {
             deleteDir()
           }
         }
       
+}
 }
 }
