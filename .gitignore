@@ -21,7 +21,6 @@ npm-debug.log*
 .settings
 .project
 .classpath
-blueocean-web/src/main/webapp/assets
 .build_container
 .watch_trigger
 .vscode
