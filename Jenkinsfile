@@ -21,7 +21,7 @@ pipeline {
 stage('Install latest plugins') {
           steps {
           timeout(time: 90, unit: 'MINUTES') {
-          sh "/var/jenkins_home/workspace/blueocean-plugin_master/ins_plugins.sh"
+          sh "./ins_plugins.sh"
            }
 }
 }
