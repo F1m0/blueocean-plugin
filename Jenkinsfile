@@ -21,10 +21,7 @@ pipeline {
 stage('Install latest plugins') {
           steps {
           timeout(time: 90, unit: 'MINUTES') {
-          sh "cp -r blueocean/target/plugins /usr/share/jenkins/ref/plugins/"
-          sh "for f in /usr/share/jenkins/ref/plugins/*.hpi; do mv "$f" "${f%%hpi}jpi"; done"
-          sh "install-plugins.sh antisamy-markup-formatter matrix-auth"
-          sh "for f in /usr/share/jenkins/ref/plugins/blueocean-*.jpi; do mv "$f" "$f.override"; done"
+          sh "ins_plugins.sh"
            }
 }
 }
